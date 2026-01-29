@@ -7,9 +7,9 @@ const loadButton = document.querySelector('.load-more-button');
 const lightbox = new SimpleLightbox('.gallery a');
 
 export function createGallery(images) {
-  const markup = images
+    const markup = images
     .map(
-      ({
+        ({
         largeImageURL,
         webformatURL,
         tags,
@@ -17,7 +17,7 @@ export function createGallery(images) {
         views,
         comments,
         downloads,
-      }) =>
+        }) =>
         `<li class="gallery-item">
             <a class="gallery-link" href="${largeImageURL}">
             <img class="gallery-image" src="${webformatURL}" alt="${tags}" loading="lazy"> 
@@ -43,21 +43,21 @@ export function createGallery(images) {
                                 </li>`
     )
     .join('');
-  galleryList.insertAdjacentHTML('beforeend', markup);
-  lightbox.refresh();
-}
-export function clearGallery() {
-  galleryList.innerHTML = '';
-}
-export function showLoader() {
-  loader.classList.remove('hiden');
-}
-export function hideLoader() {
-  loader.classList.add('hiden');
-}
-export function showLoadMoreButton() {
-  loadButton.classList.remove('hiden');
-}
-export function hideLoadMoreButton() {
-  loadButton.classList.add('hiden');
+    galleryList.insertAdjacentHTML('beforeend', markup);
+    lightbox.refresh();
+    }
+    export function clearGallery() {
+    galleryList.innerHTML = '';
+    }
+    export function showLoader() {
+    loader.classList.remove('hiden');
+    }
+    export function hideLoader() {
+    loader.classList.add('hiden');
+    }
+    export function showLoadMoreButton() {
+    loadButton.classList.remove('hiden');
+    }
+    export function hideLoadMoreButton() {
+    loadButton.classList.add('hiden');
 }
